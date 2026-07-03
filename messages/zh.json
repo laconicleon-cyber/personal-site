@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "home": "首页",
+    "projects": "项目",
+    "blog": "博客",
+    "about": "关于"
+  },
+  "footer": {
+    "brand": "AI 独立开发者",
+    "tagline": "用 AI 为全球用户构建产品。",
+    "links": "链接",
+    "projects": "项目",
+    "blog": "博客",
+    "about": "关于",
+    "connect": "联系",
+    "rights": "版权所有"
+  },
+  "home": {
+    "hero_tagline": "用 AI 为全球用户构建工具",
+    "hero_subtitle": "AI 独立开发者 — 面向海外市场发布独立工具站、资讯站、游戏站等产品。",
+    "hero_cta": "查看我的项目",
+    "hero_build": "公开构建中",
+    "stats_label": "数据",
+    "projects_label": "主打项目",
+    "projects_desc": "了解我第一个独立上线的产品。",
+    "projects_visit": "访问网站",
+    "pipeline_label": "开发管线",
+    "pipeline_title": "接下来做什么",
+    "pipeline_tool_title": "工具站",
+    "pipeline_tool_desc": "面向海外用户的 AI 生产力工具。",
+    "pipeline_info_title": "资讯站",
+    "pipeline_info_desc": "垂直行业资讯与分析平台。",
+    "pipeline_game_title": "游戏站",
+    "pipeline_game_desc": "AI 生成内容的休闲游戏平台。",
+    "newsletter_title": "保持关注",
+    "newsletter_desc": "每月获取我的独立项目更新和 AI 构建经验。",
+    "newsletter_email": "输入你的邮箱",
+    "newsletter_button": "订阅"
+  },
+  "projects": {
+    "title": "项目",
+    "subtitle": "我已构建和发布的产品。",
+    "live_badge": "已上线",
+    "dev_badge": "开发中",
+    "planned_badge": "规划中",
+    "visit_site": "访问网站",
+    "stack_label": "技术栈",
+    "roadmap_title": "路线图",
+    "roadmap_q1": "2026 Q1 — 首个工具站上线",
+    "roadmap_q2": "2026 Q2 — 搭建资讯站平台",
+    "roadmap_q3": "2026 Q3 — 游戏站发布",
+    "roadmap_q4": "2026 Q4 — 月活用户突破 10K"
+  },
+  "blog": {
+    "title": "博客",
+    "subtitle": "关于 AI、独立开发和出海的经验分享。",
+    "read_more": "阅读全文",
+    "back": "返回博客列表"
+  },
+  "about": {
+    "title": "关于",
+    "role": "AI 独立开发者 & 独立开发者",
+    "story_title": "我的故事",
+    "story_p1": "我为全球用户构建 AI 驱动的产品——从工具站到资讯站再到游戏平台。从零开始，我相信 AI 已经前所未有地降低了构建优秀产品的门槛。",
+    "story_p2": "这个网站记录了我的旅程：我构建了什么、如何构建，以及一路学到的东西。",
+    "stack_title": "技术栈",
+    "stack_dev": "开发",
+    "stack_dev_desc": "Next.js, TypeScript, Tailwind CSS, Python, Claude, Cursor",
+    "stack_ai": "AI 工具",
+    "stack_ai_desc": "LLM API、RAG、提示词工程、智能体工作流",
+    "stack_ops": "运营",
+    "stack_ops_desc": "Cloudflare Pages, Vercel, SEO, 数据分析, 内容营销",
+    "philosophy_title": "理念",
+    "philosophy_quote": "开始构建的最佳时间是昨天，其次是现在。",
+    "contact_title": "联系我",
+    "contact_email": "邮箱",
+    "contact_email_val": "hello@yourname.dev",
+    "contact_x": "X / Twitter",
+    "contact_x_val": "@yourhandle",
+    "contact_github": "GitHub",
+    "contact_github_val": "github.com/yourname"
+  }
+}

@@ -1,0 +1,52 @@
+import { useTranslations } from 'next-intl';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import { Link } from '@/i18n/routing';
+
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const t = useTranslations('blog');
+
+  return (
+    <>
+      <Navbar />
+
+      <article className="mx-auto max-w-3xl px-6 py-24">
+        <Link href="/blog" className="text-sm text-[var(--color-muted)] hover:text-[var(--color-fg)]">
+          ← {t('back')}
+        </Link>
+
+        <header className="mt-8 mb-12">
+          <h1 className="text-3xl font-bold md:text-4xl">
+            Building in Public: My Journey as an AI Indie Hacker
+          </h1>
+          <div className="mt-4 flex items-center gap-3 text-sm text-[var(--color-muted)]">
+            <time>July 1, 2026</time>
+            <span>·</span>
+            <span>5 min read</span>
+          </div>
+        </header>
+
+        <div className="prose prose-neutral max-w-none dark:prose-invert">
+          <p>
+            This is a placeholder blog post. Once you have real content, replace this with your actual article
+            written in MDX format. The blog system is set up to support MDX — just drop <code>.mdx</code> files
+            into the content directory and they will be rendered as full blog posts.
+          </p>
+          <h2>Getting Started</h2>
+          <p>
+            The first step in building for the world is deciding what problem to solve. Here's my framework...
+          </p>
+          <blockquote>
+            The best products come from solving real problems for real people.
+          </blockquote>
+          <h2>What I Learned</h2>
+          <p>
+            Building an AI tool site taught me more in 2 weeks than 2 years of traditional development.
+          </p>
+        </div>
+      </article>
+
+      <Footer />
+    </>
+  );
+}
