@@ -1,20 +1,17 @@
-import { getTranslations } from 'next-intl/server';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Link } from '@/i18n/routing';
-import { notFound } from 'next/navigation';
+import {Link} from '@/i18n/routing';
 
 export function generateStaticParams() {
   return [
-    { slug: 'my-first-ai-tool' },
-    { slug: 'why-go-global' },
-    { slug: 'ai-coding-tools' },
+    {slug: 'my-first-ai-tool'},
+    {slug: 'why-go-global'},
+    {slug: 'ai-coding-tools'},
   ];
 }
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPostPage({params}: {params: Promise<{slug: string}>}) {
   const resolvedParams = await params;
-  const t = await getTranslations('blog');
 
   return (
     <>
@@ -22,7 +19,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       <article className="mx-auto max-w-5xl px-6 py-12">
         <Link href="/blog" className="text-sm text-[var(--color-accent)] hover:underline">
-          ← {t('back')}
+          ← Back to Blog
         </Link>
 
         <header className="mt-6 mb-8">

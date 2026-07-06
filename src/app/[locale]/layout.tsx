@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-import { routing } from '@/i18n/routing';
+import {NextIntlClientProvider} from 'next-intl';
+import {setRequestLocale} from 'next-intl/server';
+import {notFound} from 'next/navigation';
+import {routing} from '@/i18n/routing';
 import '../globals.css';
+
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: {
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({locale}));
 }
 
 export default async function LocaleLayout({
@@ -22,18 +24,18 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{locale: string}>;
 }) {
-  const { locale } = await params;
+  const {locale} = await params;
   if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
-  const messages = await getMessages();
+  setRequestLocale(locale);
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className="font-sans">
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale}>
           {children}
         </NextIntlClientProvider>
       </body>
