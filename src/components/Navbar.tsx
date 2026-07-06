@@ -17,22 +17,23 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-bg)]/80 backdrop-blur-lg">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-lg font-bold tracking-tight font-mono">
-          AI Indie Builder
+    <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-bg)]">
+      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-3">
+        <Link href="/" className="flex items-center gap-2 text-lg font-bold">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-accent)] text-sm text-white">AI</span>
+          Builder
         </Link>
 
-        <div className="flex items-center gap-8">
-          <ul className="hidden md:flex items-center gap-6">
+        <div className="flex items-center gap-6">
+          <ul className="hidden md:flex items-center gap-5">
             {links.map((link) => {
               const isActive = pathname === link.href || pathname?.startsWith(link.href + '/');
               return (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`text-sm transition-colors hover:text-[var(--color-accent)] ${
-                      isActive ? 'font-semibold text-[var(--color-accent)]' : 'text-[var(--color-muted)]'
+                    className={`text-sm font-medium transition-colors hover:text-[var(--color-accent)] ${
+                      isActive ? 'text-[var(--color-accent)]' : 'text-[var(--color-muted)]'
                     }`}
                   >
                     {link.label}

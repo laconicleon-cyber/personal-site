@@ -9,34 +9,19 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-surface)]">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-8 md:grid-cols-3">
-          <div>
-            <h3 className="mb-3 font-mono text-sm font-bold">{t('brand')}</h3>
-            <p className="text-sm text-[var(--color-muted)]">{t('tagline')}</p>
+      <div className="mx-auto max-w-5xl px-6 py-10">
+        <div className="flex flex-col items-center gap-4 text-center">
+          <div className="flex items-center gap-2 text-lg font-bold">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[var(--color-accent)] text-xs text-white">AI</span>
+            Builder
           </div>
-
-          <div>
-            <h3 className="mb-3 text-sm font-semibold">{t('links')}</h3>
-            <ul className="space-y-2">
-              <li><Link href="/projects" className="text-sm text-[var(--color-muted)] hover:text-[var(--color-fg)]">{t('projects')}</Link></li>
-              <li><Link href="/blog" className="text-sm text-[var(--color-muted)] hover:text-[var(--color-fg)]">{t('blog')}</Link></li>
-              <li><Link href="/about" className="text-sm text-[var(--color-muted)] hover:text-[var(--color-fg)]">{t('about')}</Link></li>
-            </ul>
+          <p className="text-sm text-[var(--color-muted)]">{t('tagline')}</p>
+          <div className="flex items-center gap-6">
+            <Link href="/projects" className="text-sm text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors">{t('projects')}</Link>
+            <Link href="/blog" className="text-sm text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors">{t('blog')}</Link>
+            <Link href="/about" className="text-sm text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors">{t('about')}</Link>
           </div>
-
-          <div>
-            <h3 className="mb-3 text-sm font-semibold">{t('connect')}</h3>
-            <ul className="space-y-2">
-              <li><a href="mailto:hello@yourname.dev" className="text-sm text-[var(--color-muted)] hover:text-[var(--color-fg)]">hello@yourname.dev</a></li>
-              <li><a href="https://x.com/yourhandle" target="_blank" rel="noopener noreferrer" className="text-sm text-[var(--color-muted)] hover:text-[var(--color-fg)]">X / Twitter</a></li>
-              <li><a href="https://github.com/yourname" target="_blank" rel="noopener noreferrer" className="text-sm text-[var(--color-muted)] hover:text-[var(--color-fg)]">GitHub</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-10 border-t border-[var(--color-border)] pt-6 text-center text-xs text-[var(--color-muted)]">
-          © {year} {t('brand')}. {t('rights')}
+          <p className="text-xs text-[var(--color-muted)]">© {year} {t('brand')}. {t('rights')}</p>
         </div>
       </div>
     </footer>

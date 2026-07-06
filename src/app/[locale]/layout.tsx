@@ -12,10 +12,10 @@ const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' }
 
 export const metadata: Metadata = {
   title: {
-    default: 'AI Indie Builder — Building Tools for the World',
-    template: '%s | AI Indie Builder',
+    default: 'AI Builder — Building Tools for the World',
+    template: '%s | AI Builder',
   },
-  description: 'AI-powered indie hacker building tool sites, info sites, and game sites for global users.',
+  description: 'AI-powered indie builder creating tools, info platforms, and games for global users.',
 };
 
 export function generateStaticParams() {

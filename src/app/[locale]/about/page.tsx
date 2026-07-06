@@ -9,39 +9,46 @@ export default function AboutPage() {
     <>
       <Navbar />
 
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        {/* Avatar + Intro */}
-        <div className="mb-20 flex flex-col items-center text-center md:flex-row md:text-left md:items-start md:gap-12">
-          <div className="mb-6 flex h-32 w-32 shrink-0 items-center justify-center rounded-full bg-[var(--color-surface)] text-5xl md:mb-0">
-            👨‍💻
-          </div>
-          <div>
-            <h1 className="text-4xl font-bold tracking-tight">{t('title')}</h1>
-            <p className="mt-3 text-lg text-[var(--color-muted)]">{t('role')}</p>
+      <section className="mx-auto max-w-5xl px-6 py-12">
+        {/* Profile card */}
+        <div className="mb-10 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 shadow-sm">
+          <div className="flex items-center gap-5">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-3xl dark:bg-blue-900/30">
+              👨‍💻
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold">{t('title')}</h1>
+              <p className="text-sm text-[var(--color-muted)]">{t('role')}</p>
+            </div>
           </div>
         </div>
 
         {/* Story */}
-        <div className="mb-20 max-w-2xl">
-          <h2 className="mb-6 text-2xl font-bold">{t('story_title')}</h2>
-          <p className="mb-4 text-[var(--color-muted)]">{t('story_p1')}</p>
-          <p className="text-[var(--color-muted)]">{t('story_p2')}</p>
+        <div className="mb-10">
+          <h2 className="mb-4 text-lg font-bold">{t('story_title')}</h2>
+          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 shadow-sm">
+            <p className="mb-3 text-[var(--color-muted)]">{t('story_p1')}</p>
+            <p className="text-[var(--color-muted)]">{t('story_p2')}</p>
+          </div>
         </div>
 
         {/* Tech Stack */}
-        <div className="mb-20">
-          <h2 className="mb-8 text-2xl font-bold">{t('stack_title')}</h2>
-          <div className="grid gap-6 md:grid-cols-3">
+        <div className="mb-10">
+          <h2 className="mb-4 text-lg font-bold">{t('stack_title')}</h2>
+          <div className="grid gap-4 md:grid-cols-3">
             {[
-              { title: t('stack_dev'), desc: t('stack_dev_desc') },
-              { title: t('stack_ai'), desc: t('stack_ai_desc') },
-              { title: t('stack_ops'), desc: t('stack_ops_desc') },
+              { title: t('stack_dev'), desc: t('stack_dev_desc'), icon: '💻' },
+              { title: t('stack_ai'), desc: t('stack_ai_desc'), icon: '🤖' },
+              { title: t('stack_ops'), desc: t('stack_ops_desc'), icon: '📊' },
             ].map((stack, i) => (
               <div
                 key={i}
-                className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6"
+                className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-5 shadow-sm"
               >
-                <h3 className="mb-2 font-semibold">{stack.title}</h3>
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="text-lg">{stack.icon}</span>
+                  <h3 className="font-bold">{stack.title}</h3>
+                </div>
                 <p className="text-sm text-[var(--color-muted)]">{stack.desc}</p>
               </div>
             ))}
@@ -49,32 +56,35 @@ export default function AboutPage() {
         </div>
 
         {/* Philosophy */}
-        <div className="mb-20 max-w-2xl">
-          <h2 className="mb-6 text-2xl font-bold">{t('philosophy_title')}</h2>
-          <blockquote className="border-l-2 border-[var(--color-accent)] pl-6 text-lg italic text-[var(--color-muted)]">
-            {t('philosophy_quote')}
-          </blockquote>
+        <div className="mb-10">
+          <h2 className="mb-4 text-lg font-bold">{t('philosophy_title')}</h2>
+          <div className="rounded-xl border-l-4 border-[var(--color-accent)] bg-[var(--color-accent-light)] p-6">
+            <p className="text-base font-medium italic text-[var(--color-fg)]">
+              {t('philosophy_quote')}
+            </p>
+          </div>
         </div>
 
         {/* Contact */}
         <div>
-          <h2 className="mb-8 text-2xl font-bold">{t('contact_title')}</h2>
+          <h2 className="mb-4 text-lg font-bold">{t('contact_title')}</h2>
           <div className="grid gap-4 md:grid-cols-3">
             {[
-              { label: t('contact_email'), value: t('contact_email_val'), href: `mailto:${t('contact_email_val')}` },
-              { label: t('contact_x'), value: t('contact_x_val'), href: 'https://x.com/yourhandle' },
-              { label: t('contact_github'), value: t('contact_github_val'), href: 'https://github.com/yourname' },
+              { label: t('contact_email'), value: t('contact_email_val'), href: `mailto:${t('contact_email_val')}`, icon: '📧' },
+              { label: t('contact_x'), value: t('contact_x_val'), href: 'https://x.com/yourhandle', icon: '🐦' },
+              { label: t('contact_github'), value: t('contact_github_val'), href: 'https://github.com/yourname', icon: '📦' },
             ].map((item, i) => (
               <a
                 key={i}
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-all hover:border-[var(--color-accent)]"
+                className="flex items-center gap-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 shadow-sm transition-colors hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-light)]"
               >
-                <div className="text-xs text-[var(--color-muted)]">{item.label}</div>
-                <div className="mt-1 text-sm font-medium transition-colors group-hover:text-[var(--color-accent)]">
-                  {item.value}
+                <span className="text-lg">{item.icon}</span>
+                <div>
+                  <div className="text-xs text-[var(--color-muted)]">{item.label}</div>
+                  <div className="text-sm font-medium text-[var(--color-accent)]">{item.value}</div>
                 </div>
               </a>
             ))}

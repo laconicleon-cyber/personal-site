@@ -1,10 +1,12 @@
 import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from '@/i18n/routing';
 
 export default function BlogPage() {
   const t = useTranslations('blog');
+  const locale = useLocale();
 
   const posts = [
     {
@@ -34,41 +36,41 @@ export default function BlogPage() {
     <>
       <Navbar />
 
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="mb-16">
-          <h1 className="text-4xl font-bold tracking-tight">{t('title')}</h1>
-          <p className="mt-4 text-lg text-[var(--color-muted)]">{t('subtitle')}</p>
+      <section className="mx-auto max-w-5xl px-6 py-12">
+        <div className="mb-8">
+          <h1 className="text-2xl font-bold">{t('title')}</h1>
+          <p className="mt-2 text-[var(--color-muted)]">{t('subtitle')}</p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-4">
           {posts.map((post) => (
             <article
               key={post.slug}
-              className="group rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-8 transition-all hover:border-[var(--color-accent)] hover:shadow-lg"
+              className="group rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 shadow-sm transition-colors hover:border-[var(--color-accent)]"
             >
               <div className="flex items-center gap-3 text-xs text-[var(--color-muted)]">
                 <time>{post.date}</time>
                 <span>·</span>
                 <div className="flex gap-2">
                   {post.tags.map((tag) => (
-                    <span key={tag} className="rounded-full bg-[var(--color-surface)] px-2 py-0.5">
+                    <span key={tag} className="rounded-full bg-blue-50 px-2 py-0.5 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <h2 className="mt-3 text-xl font-bold transition-colors group-hover:text-[var(--color-accent)]">
-                {post.title}
+              <h2 className="mt-2 font-bold transition-colors group-hover:text-[var(--color-accent)]">
+                {post.title[locale as 'en' | 'zh']}
               </h2>
 
-              <p className="mt-3 text-sm text-[var(--color-muted)]">
-                {post.excerpt}
+              <p className="mt-1 text-sm text-[var(--color-muted)]">
+                {post.excerpt[locale as 'en' | 'zh']}
               </p>
 
               <Link
                 href={`/blog/${post.slug}`}
-                className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[var(--color-accent)] underline underline-offset-4"
+                className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[var(--color-accent)] hover:underline"
               >
                 {t('read_more')} →
               </Link>
