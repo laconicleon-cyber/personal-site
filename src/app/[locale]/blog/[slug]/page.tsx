@@ -2,6 +2,15 @@ import { getTranslations } from 'next-intl/server';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Link } from '@/i18n/routing';
+import { notFound } from 'next/navigation';
+
+export function generateStaticParams() {
+  return [
+    { slug: 'my-first-ai-tool' },
+    { slug: 'why-go-global' },
+    { slug: 'ai-coding-tools' },
+  ];
+}
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;

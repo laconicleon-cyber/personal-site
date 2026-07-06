@@ -1,14 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter, Noto_Sans_SC, JetBrains_Mono } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import '../globals.css';
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const noto = Noto_Sans_SC({ subsets: ['latin'], variable: '--font-noto' });
-const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export const metadata: Metadata = {
   title: {
@@ -37,7 +32,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} ${noto.variable} ${jetbrains.variable} font-sans`}>
+      <body className="font-sans">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
