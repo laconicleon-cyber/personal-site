@@ -17,8 +17,8 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-bg)]">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-3">
+    <header className="sticky top-0 z-50 w-full border-b border-[var(--color-border)] bg-[var(--color-bg)]">
+      <nav className="mx-auto flex w-full items-center justify-between px-6 py-3 lg:px-12">
         <Link href="/" className="flex items-center gap-2 text-lg font-bold">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-accent)] text-sm text-white">AI</span>
           Builder

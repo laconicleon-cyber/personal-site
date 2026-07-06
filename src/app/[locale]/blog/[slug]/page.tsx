@@ -17,13 +17,13 @@ export default async function BlogPostPage({params}: {params: Promise<{slug: str
     <>
       <Navbar />
 
-      <article className="mx-auto max-w-5xl px-6 py-12">
+      <article className="w-full px-6 py-12 lg:px-12">
         <Link href="/blog" className="text-sm text-[var(--color-accent)] hover:underline">
           ← Back to Blog
         </Link>
 
         <header className="mt-6 mb-8">
-          <h1 className="text-2xl font-bold">
+          <h1 className="text-2xl font-bold md:text-3xl">
             Building in Public: My Journey as an AI Indie Hacker
           </h1>
           <div className="mt-2 flex items-center gap-3 text-sm text-[var(--color-muted)]">

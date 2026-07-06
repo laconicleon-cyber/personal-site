@@ -36,9 +36,9 @@ export default function BlogPage() {
     <>
       <Navbar />
 
-      <section className="mx-auto max-w-5xl px-6 py-12">
+      <section className="w-full px-6 py-12 lg:px-12">
         <div className="mb-8">
-          <h1 className="text-2xl font-bold">{t('title')}</h1>
+          <h1 className="text-2xl font-bold md:text-3xl">{t('title')}</h1>
           <p className="mt-2 text-[var(--color-muted)]">{t('subtitle')}</p>
         </div>
 

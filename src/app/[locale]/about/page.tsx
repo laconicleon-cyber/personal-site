@@ -9,21 +9,19 @@ export default function AboutPage() {
     <>
       <Navbar />
 
-      <section className="mx-auto max-w-5xl px-6 py-12">
-        {/* Profile card */}
+      <section className="w-full px-6 py-12 lg:px-12">
         <div className="mb-10 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 shadow-sm">
           <div className="flex items-center gap-5">
             <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-3xl dark:bg-blue-900/30">
               👨‍💻
             </div>
             <div>
-              <h1 className="text-2xl font-bold">{t('title')}</h1>
+              <h1 className="text-2xl font-bold md:text-3xl">{t('title')}</h1>
               <p className="text-sm text-[var(--color-muted)]">{t('role')}</p>
             </div>
           </div>
         </div>
 
-        {/* Story */}
         <div className="mb-10">
           <h2 className="mb-4 text-lg font-bold">{t('story_title')}</h2>
           <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 shadow-sm">
@@ -32,7 +30,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Tech Stack */}
         <div className="mb-10">
           <h2 className="mb-4 text-lg font-bold">{t('stack_title')}</h2>
           <div className="grid gap-4 md:grid-cols-3">
@@ -55,7 +52,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Philosophy */}
         <div className="mb-10">
           <h2 className="mb-4 text-lg font-bold">{t('philosophy_title')}</h2>
           <div className="rounded-xl border-l-4 border-[var(--color-accent)] bg-[var(--color-accent-light)] p-6">
@@ -65,7 +61,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Contact */}
         <div>
           <h2 className="mb-4 text-lg font-bold">{t('contact_title')}</h2>
           <div className="grid gap-4 md:grid-cols-3">

@@ -10,17 +10,16 @@ export default function HomePage() {
     <>
       <Navbar />
 
-      {/* Hero — invest-nav style */}
-      <section className="bg-[var(--color-surface)]">
-        <div className="mx-auto max-w-5xl px-6 py-16 text-center md:py-20">
+      <section className="w-full bg-[var(--color-surface)]">
+        <div className="mx-auto w-full px-6 py-16 text-center md:py-24 lg:px-12">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-xs font-medium text-blue-600 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-400">
             <span className="h-2 w-2 animate-pulse rounded-full bg-blue-500"></span>
             {t('hero_build')}
           </div>
-          <h1 className="mb-4 text-3xl font-bold leading-tight tracking-tight md:text-4xl">
+          <h1 className="mb-4 text-3xl font-bold leading-tight tracking-tight md:text-5xl">
             {t('hero_line1')} {t('hero_line2')}
           </h1>
-          <p className="mx-auto mb-8 max-w-lg text-base text-[var(--color-muted)]">
+          <p className="mx-auto mb-8 max-w-2xl text-base text-[var(--color-muted)] md:text-lg">
             {t('hero_subtitle')}
           </p>
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
@@ -34,8 +33,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Project — card style */}
-      <section className="mx-auto max-w-5xl px-6 py-12">
+      <section className="w-full px-6 py-12 lg:px-12">
         <div className="mb-6">
           <h2 className="text-xl font-bold">{t('projects_label')}</h2>
         </div>
@@ -63,8 +61,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Pipeline — tutorial cards */}
-      <section className="mx-auto max-w-5xl px-6 py-12">
+      <section className="w-full px-6 py-12 lg:px-12">
         <div className="mb-6">
           <h2 className="text-xl font-bold">{t('pipeline_title')}</h2>
         </div>
@@ -94,14 +91,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="mx-auto max-w-5xl px-6 py-12">
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-10 text-center">
+      <section className="w-full px-6 py-12 lg:px-12">
+        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-10 text-center md:px-12">
           <h2 className="text-xl font-bold">{t('newsletter_title')}</h2>
-          <p className="mx-auto mt-2 max-w-sm text-sm text-[var(--color-muted)]">
+          <p className="mx-auto mt-2 max-w-xl text-sm text-[var(--color-muted)]">
             {t('newsletter_desc')}
           </p>
-          <form className="mx-auto mt-6 flex max-w-md gap-3">
+          <form className="mx-auto mt-6 flex max-w-xl gap-3">
             <input
               type="email"
               placeholder={t('newsletter_email')}
